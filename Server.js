@@ -5,7 +5,7 @@ const dotENV = require("dotenv");
 const userRouter = require("./Router/userRouter")
 dotENV.config();
 const videoCollection = require("./model/videoTutModel")
-
+const mocktestCollection =require("./model/MockTestModel")
 
 const PORT__NUBMER = process.env.port;
 const appServer = express();
@@ -20,7 +20,11 @@ appServer.use("/user", userRouter);
 appServer.use("/video", async (request, response)=>{
     const videoData = await videoCollection.find({});
     return response.send(videoData)
-    
+})
+
+appServer.use("/mocktest", async (request, response)=>{
+    const mockData = await mocktestCollection.find();
+    return response.send(mockData)
 })
 
 
