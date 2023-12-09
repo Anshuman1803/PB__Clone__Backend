@@ -4,6 +4,7 @@ const cors = require("cors");
 const dotENV = require("dotenv");
 const userRouter = require("./Router/userRouter")
 dotENV.config();
+const videoCollection = require("./model/videoTutModel")
 
 
 const PORT__NUBMER = process.env.port;
@@ -14,7 +15,13 @@ appServer.use(cors({
     origin: "*"
 }));
 
-appServer.use("/user", userRouter)
+appServer.use("/user", userRouter);
+
+appServer.use("/video", async (request, response)=>{
+    const videoData = await videoCollection.find({});
+    return response.send(videoData)
+    
+})
 
 
 appServer.listen(PORT__NUBMER, async () => {
