@@ -41,4 +41,32 @@
         "videoCount": "30",
     },
   
+    {
+        "videoPoster": "https://i.ytimg.com/vi/vuMQDj8-W0A/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLCh96tuXK1zokg-p5FgDrm0gq5BlA",
+        "videoTitle": "Wed Development",
+        "videoDesc": "Learn in-depth concept of Wed Development",
+        "videoCount": "30",
+    },
+
+    {
+        "videoPoster": "https://i.ytimg.com/vi/BeJFxpfgOUo/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLAjg0MlndikxYILXDX58-ccnwkLaQ",
+        "videoTitle": "Strings In C",
+        "videoDesc": "Deep dive into the fundamentals of C",
+        "videoCount": "30",
+    },
+  
+    {
+        "videoPoster": "https://i.ytimg.com/vi/sTNhs0vwVb4/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLA8s2GtgrJE1-j_0fcyEiy05RT61w",
+        "videoTitle": "Database Preparation Series",
+        "videoDesc": "Deep dive into the Concept of Database",
+        "videoCount": "30",
+    },
+  
+    {
+        "videoPoster": "https://i.ytimg.com/vi/Fv4bZI162I4/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLCAcnXd2ivHw7qdjMMUGAVS3k38_g",
+        "videoTitle": "Top 25 Coding Questions",
+        "videoDesc": "we will discuss the Top 25 coding questions that appeared in the technical interview of Tech Giants",
+        "videoCount": "30",
+    },
+  
 ]
