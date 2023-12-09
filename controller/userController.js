@@ -18,7 +18,7 @@ const userLogin = async (request, response) => {
     if (userAuthenticaticated) {
         const generatedToken = JWT.sign({ "USER": tempUser.userEmail }, KEY, { expiresIn: "9000" });
         return response.send({ "Your_TOKEN": generatedToken, "UserDetails": findUser });
-        
+
     } else {
         return response.send({ resMsg: "Incorrect Credentials. Please try again" });
     }
@@ -29,7 +29,7 @@ const userRegister = async (request, response) => {
     let IsRegistred = await registredUserCollection.findOne({ userEmail: { $eq: tempUser.userEmail } });
 
     if (IsRegistred) {
-        return response.send({ "resMsg": "User Already Exists" });
+        return response.send({ "resMsg": "Email already registered. Please login" });
     } else {
 
         //hashing password using bcrypt
@@ -42,7 +42,7 @@ const userRegister = async (request, response) => {
             const generatedToken = JWT.sign({ "USER": tempUser.userEmail }, KEY);
 
             // sending response back to client 
-            return response.send({ resMsg: "User Registred Successfully", "Your_TOKEN": generatedToken });
+            return response.send({ resMsg: "Registred Successfully.", "Your_TOKEN": generatedToken });
         } else {
             return response.send({ resMsg: "Something Went Wrong, Try Again" });
         }
@@ -50,4 +50,4 @@ const userRegister = async (request, response) => {
     }
 }
 
-module.exports = { userLogin,userRegister }
+module.exports = { userLogin, userRegister }
