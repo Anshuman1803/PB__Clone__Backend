@@ -35,6 +35,11 @@ appServer.post("/storeData", async (request, response) => {
     const currentOrder = request.body;
     await purchasedOrderCollection.create(currentOrder);
     return response.send("Order Saved");
+});
+
+appServer.get("/getTestdata", async (request, response) => {
+    const PurchasedTests = await purchasedOrderCollection.find({});
+    return response.send(PurchasedTests);
 })
 
 const generateAccessToken = async () => {
