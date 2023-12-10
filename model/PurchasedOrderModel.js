@@ -20,6 +20,9 @@ const orderModel = mongoose.Schema({
         type: Number,
         required: true
     },
+    "testDate": {
+        type: String
+    }
 
 });
 const purchasedOrderCollection = mongoose.model("purchasedOrder", orderModel);
