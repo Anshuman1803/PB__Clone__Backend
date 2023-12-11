@@ -6,7 +6,6 @@ const MONGO__USER = process.env.mongooseUser;
 const MONGO__PASS = process.env.mongoosePass;
 const MONGO__URL = `mongodb+srv://${MONGO__USER}:${MONGO__PASS}@cluster0.48mqrke.mongodb.net/PB_CLONEDB?retryWrites=true&w=majority`
 
-
 const mongooseConnection = async()=>{
     try{
         await mongoose.connect(MONGO__URL);
