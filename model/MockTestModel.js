@@ -8,9 +8,8 @@ const mockModel = mongoose.Schema({
         type: String,
         required: true
     },
-    "testName": {
+    "testTitle": {
         type: String,
-        required: true
     },
     "testCategory": {
         type: String,
@@ -20,8 +19,21 @@ const mockModel = mongoose.Schema({
         type: Number,
         required: true
     },
+    "testDate": {
+        type: String,
+    },
+    "testParticipants": {
+        type: Number,
+    },
+    "testDurition": {
+        type: Number,
+    },
+
+
+
 
 });
 const mocktestCollection = mongoose.model("mocktest", mockModel);
+const purchasedOrderCollection = mongoose.model("purchasedOrder", mockModel);
 
-module.exports = mocktestCollection;
+module.exports = {mocktestCollection, purchasedOrderCollection};

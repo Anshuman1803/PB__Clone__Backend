@@ -5,8 +5,8 @@ const dotENV = require("dotenv");
 const userRouter = require("./Router/userRouter")
 dotENV.config();
 const videoCollection = require("./model/videoTutModel")
-const mocktestCollection = require("./model/MockTestModel")
-const purchasedOrderCollection = require("./model/PurchasedOrderModel")
+
+const {mocktestCollection, purchasedOrderCollection} = require("./model/MockTestModel")
 
 const PORT__NUBMER = process.env.port;
 const { PAYPAL_CLIENT_ID, PAYPAL_CLIENT_SECRET } = process.env;
