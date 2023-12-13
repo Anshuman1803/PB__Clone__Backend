@@ -7,7 +7,8 @@ dotENV.config();
 const videoCollection = require("./model/videoTutModel")
 const projectCollection = require("./model/ProjectModel")
 
-const {mocktestCollection, purchasedOrderCollection} = require("./model/MockTestModel")
+const {mocktestCollection, purchasedOrderCollection} = require("./model/MockTestModel");
+const syllabusCollection = require("./model/EA_SyllabusModel")
 
 const PORT__NUBMER = process.env.port;
 const { PAYPAL_CLIENT_ID, PAYPAL_CLIENT_SECRET } = process.env;
@@ -43,12 +44,18 @@ appServer.get("/getTestdata", async (request, response) => {
     return response.send(PurchasedTests);
 })
 
+appServer.get("/getSyllabus", async (request, response) => {
+    const syllabus = await syllabusCollection.find({});
+    return response.send(syllabus);
+})
+
 appServer.get("/project/:topic", async(request, response)=>{
     const topic = request.params.topic;
     const data = await projectCollection.find({"project_Category" : topic});
     return response.send(data)
     console.log(topic)
 })
+
 const generateAccessToken = async () => {
     try {
         if (!PAYPAL_CLIENT_ID || !PAYPAL_CLIENT_SECRET) {
