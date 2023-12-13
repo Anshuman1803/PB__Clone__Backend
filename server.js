@@ -6,8 +6,8 @@ const userRouter = require("./Router/userRouter")
 dotENV.config();
 const videoCollection = require("./model/videoTutModel")
 const projectCollection = require("./model/ProjectModel")
-
 const {mocktestCollection, purchasedOrderCollection} = require("./model/MockTestModel");
+const {EA_Contoller} = require("./controller/EA_RegistrationController")
 const syllabusCollection = require("./model/EA_SyllabusModel")
 
 const PORT__NUBMER = process.env.port;
@@ -22,6 +22,7 @@ appServer.use(cors({
 }));
 
 appServer.use("/user", userRouter);
+appServer.post("/EA_registration", EA_Contoller);
 
 appServer.use("/video", async (request, response) => {
     const videoData = await videoCollection.find({});
@@ -38,6 +39,7 @@ appServer.post("/storeData", async (request, response) => {
     await purchasedOrderCollection.create(currentOrder);
     return response.send("Order Saved");
 });
+
 
 appServer.get("/getTestdata", async (request, response) => {
     const PurchasedTests = await purchasedOrderCollection.find({});
