@@ -9,6 +9,7 @@ const projectCollection = require("./model/ProjectModel")
 const {mocktestCollection, purchasedOrderCollection} = require("./model/MockTestModel");
 const {EA_Contoller} = require("./controller/EA_RegistrationController")
 const syllabusCollection = require("./model/EA_SyllabusModel")
+const mentorCollection = require("./model/MentorModel")
 
 const PORT__NUBMER = process.env.port;
 const { PAYPAL_CLIENT_ID, PAYPAL_CLIENT_SECRET } = process.env;
@@ -49,6 +50,11 @@ appServer.get("/getTestdata", async (request, response) => {
 appServer.get("/getSyllabus", async (request, response) => {
     const syllabus = await syllabusCollection.find({});
     return response.send(syllabus);
+});
+
+appServer.get("/mentors",async (request, response)=>{
+    const mentors = await mentorCollection.find({});
+    return response.send(mentors)
 })
 
 appServer.get("/project/:topic", async(request, response)=>{
