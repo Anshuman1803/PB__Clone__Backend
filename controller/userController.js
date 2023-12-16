@@ -42,7 +42,7 @@ const userRegister = async (request, response) => {
             const generatedToken = JWT.sign({ "USER": tempUser.userEmail }, KEY);
 
             // sending response back to client 
-            return response.send({ resMsg: "Registred Successfully.", "Your_TOKEN": generatedToken });
+            return response.send({ resMsg: "Registred Successfully.", "Your_TOKEN": generatedToken,"userDetails" : registredResult });
         } else {
             return response.send({ resMsg: "Something Went Wrong, Try Again" });
         }
