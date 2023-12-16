@@ -42,8 +42,9 @@ appServer.post("/storeData", async (request, response) => {
 });
 
 
-appServer.get("/getTestdata", async (request, response) => {
-    const PurchasedTests = await purchasedOrderCollection.find({});
+appServer.get("/getTestdata/:email", async (request, response) => {
+    const {email} = request.params
+    const PurchasedTests = await purchasedOrderCollection.find({"userEmail" : {$eq : email}});
     return response.send(PurchasedTests);
 })
 

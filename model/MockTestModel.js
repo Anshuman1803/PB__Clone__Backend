@@ -28,7 +28,9 @@ const mockModel = mongoose.Schema({
     "testDurition": {
         type: Number,
     },
-
+    "userEmail": {
+        type: String
+    }
 
 
 
@@ -36,4 +38,4 @@ const mockModel = mongoose.Schema({
 const mocktestCollection = mongoose.model("mocktest", mockModel);
 const purchasedOrderCollection = mongoose.model("purchasedOrder", mockModel);
 
-module.exports = {mocktestCollection, purchasedOrderCollection};
+module.exports = { mocktestCollection, purchasedOrderCollection };
